@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const res = await fetch("https://wordpress.alanakra.fr/wp-json/wp/v2/posts");
+const posts = await res.json();
 ---
 
 <Layout title="Alan's Lab">
@@ -8,9 +10,44 @@ import Layout from '../layouts/Layout.astro';
 		<p>This website lists my creative coding projects. <br>
 			If these projects seem like crap to you, it's normal I'm barely learning on my own time :) 
 		</p>
+
+		<ul class="project-container">
+			{
+				posts.map((post) => (
+				<li>
+					<a href="#">
+						<section>
+							<h2 set:html={post.title.rendered} />
+							<p set:html={post.excerpt.rendered} />
+							<p></p>
+						</section>
+					</a>
+				</li>
+				))
+			}
+		</ul>
 	</div>
 </Layout>
 
 <style lang="scss">
+	a {
+		color: black;
+		text-decoration: none;
+	}
 
+	ul {
+		li {
+			font-size: 1.25rem;
+			font-family: 'Roboto', monospace;
+			section {
+				margin-top: 1rem;
+
+				h2 {
+					color: #4B9CD3;
+					font-size: inherit;
+					font-weight: inherit;
+				}
+			}
+		}
+	}
 </style>
