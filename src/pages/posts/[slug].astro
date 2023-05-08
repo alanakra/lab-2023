@@ -12,10 +12,22 @@ console.log(post);
 <Layout title={`Alan's Lab | ${slug}`}>
     <div class="container">
         <h1 set:html={post.title.rendered}></h1>
-        <p set:html={moment(post.date).format('MMMM D, YYYY')}></p>
+        <p class="date" set:html={moment(post.date).format('MMMM D, YYYY')}></p>
         <Fragment set:html={post.content.rendered}></Fragment>
     </div>
-</Layout>
 
-<style lang="scss">
-</style>
+    <style lang="scss">
+        .container {
+            p {
+                margin-bottom: 1rem;
+            }
+            
+            img {
+                width: 90%;
+                max-width: 400px;
+                height: auto;
+                border: solid;
+            }
+        }
+    </style>
+</Layout>
