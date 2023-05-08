@@ -10,7 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.4.1",
+    "@astrojs/vercel": "^3.3.0",
+    "astro": "^2.3.4",
     "moment": "^2.29.4"
   },
   "devDependencies": {
