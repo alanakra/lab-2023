@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import moment from 'moment';
 const res = await fetch("https://wordpress.alanakra.fr/wp-json/wp/v2/posts");
 const posts = await res.json();
 ---
@@ -17,9 +18,9 @@ const posts = await res.json();
 				<li>
 					<a href={`posts/${post.slug}`}>
 						<section>
+							<span class="date">{moment(post.date).format('MMMM D, YYYY')}</span>
 							<h2 set:html={post.title.rendered} />
 							<p set:html={post.excerpt.rendered} />
-							<p></p>
 						</section>
 					</a>
 				</li>
@@ -39,9 +40,14 @@ const posts = await res.json();
 		li {
 			font-size: 1.25rem;
 			font-family: 'Roboto', monospace;
+			margin-bottom: 1.5rem;
 			section {
 				margin-top: 1rem;
 
+				.date {
+					margin-bottom: .25rem;
+					display: inline-block;
+				}
 				h2 {
 					color: #4B9CD3;
 					font-size: inherit;
