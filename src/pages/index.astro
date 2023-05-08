@@ -18,7 +18,7 @@ const posts = await res.json();
 				<li>
 					<a href={`posts/${post.slug}`}>
 						<section>
-							<span class="date">{moment(post.date).format('MMMM D, YYYY')}</span>
+							<span class="date" set:html={moment(post.date).format('MMMM D, YYYY')}></span>
 							<h2 set:html={post.title.rendered} />
 							<p set:html={post.excerpt.rendered} />
 						</section>
