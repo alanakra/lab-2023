@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import moment from 'moment';
 
 const { slug } = Astro.params;
 
@@ -10,7 +11,14 @@ console.log(post);
 
 <Layout title={`Alan's Lab | ${slug}`}>
     <div class="container">
-        <h1>{post.title.rendered}</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quae, a fuga aspernatur at aliquam vitae architecto iure quis voluptate!</p>
+        <h1 set:html={post.title.rendered}></h1>
+        <p set:html={moment(post.date).format('MMMM D, YYYY')}></p>
+        <div class="content" set:html={post.content.rendered}></div>
     </div>
 </Layout>
+
+<style lang="scss">
+    .content > p {
+        color: red !important;
+    }
+</style>
