@@ -4,12 +4,14 @@ specifiers:
   '@astrojs/vercel': ^3.3.0
   astro: ^2.3.4
   moment: ^2.29.4
+  remixicon: ^3.2.0
   sass: ^1.62.1
 
 dependencies:
   '@astrojs/vercel': 3.3.0_astro@2.4.2
   astro: 2.4.2_sass@1.62.1
   moment: 2.29.4
+  remixicon: 3.2.0
 
 devDependencies:
   sass: 1.62.1
@@ -2745,6 +2747,10 @@ packages:
       retext: 8.1.0
       retext-smartypants: 5.2.0
       unist-util-visit: 4.1.2
+    dev: false
+
+  /remixicon/3.2.0:
+    resolution: {integrity: sha512-ADh4EQE4UGtm9GHqD+TIfVp1b0zeWso6efaMAnejdB6/7Z1W02Ka5K8khQaz+LNgIqC6dSZxCvXMWNalYWHiNQ==}
     dev: false
 
   /resolve-from/5.0.0:
