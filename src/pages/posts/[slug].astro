@@ -1,20 +1,34 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 const { slug } = Astro.params;
 
-let res = await fetch(`https://wordpress.alanakra.fr/wp-json/wp/v2/posts?slug=${slug}`)
-let [post] = await res.json();
-console.log(post);
+async function fetchPost() {
+    try {
+        const res = await fetch(`https://wordpress.alanakra.fr/wp-json/wp/v2/posts?slug=${slug}`);
+        const [post] = await res.json();
+        if (!post) {
+            throw new Error('Post not found');
+        }
+        return post;
+    } catch (error) {
+        console.error('Error fetching post:', error);
+    }
+}
+
+let post = await fetchPost();
 ---
 
 <Layout title={`Alan's Lab | ${slug}`}>
-    <div class="container">
-        <h1 set:html={post.title.rendered}></h1>
-        <i class="ri-calendar-2-line"></i> <p class="date" set:html={moment(post.date).format('MMMM D, YYYY')}></p>
-        <Fragment set:html={post.content.rendered}></Fragment>
-    </div>
+    {post && (
+        <div class="container">
+            <h1 set:html={post.title.rendered}></h1>
+            <i class="ri-calendar-2-line"></i>
+            <p class="date" set:html={dayjs(post.date).format('MMMM D, YYYY')}></p>
+            <Fragment set:html={post.content.rendered}></Fragment>
+        </div>
+    )}
 
     <style lang="scss">
         .container {

@@ -12,7 +12,7 @@
   "dependencies": {
     "@astrojs/vercel": "^3.3.0",
     "astro": "^2.3.4",
-    "moment": "^2.29.4",
+    "dayjs": "^1.11.13",
     "remixicon": "^3.2.0"
   },
   "devDependencies": {
