@@ -22,5 +22,5 @@ export default function ToggleDarkMode() {
         document.getElementsByTagName('html')[0].classList.add(newTheme)
     }
 
-    return <i style={{cursor: 'pointer'}} className={theme === 'light' ? 'ri-moon-line' : 'ri-sun-line'} onClick={toggleTheme}></i>
+    return <i style={{cursor: 'pointer'}} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`} className={theme === 'light' ? 'ri-moon-line' : 'ri-sun-line'} onClick={toggleTheme}></i>
 }
