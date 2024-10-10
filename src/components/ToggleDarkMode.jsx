@@ -18,15 +18,9 @@ export default function ToggleDarkMode() {
         setTheme(newTheme)
         localStorage.setItem("theme", newTheme)
 
-        document.getElementsByTagName('html')[0] .classList.remove(theme)
-        document.getElementsByTagName('html')[0] .classList.add(newTheme)
+        document.getElementsByTagName('html')[0].classList.remove(theme)
+        document.getElementsByTagName('html')[0].classList.add(newTheme)
     }
 
-    return (
-        <>
-            <button onClick={toggleTheme}>
-                Switch
-            </button>
-        </>
-    )
+    return <i style={{cursor: 'pointer'}} className={theme === 'light' ? 'ri-moon-line' : 'ri-sun-line'} onClick={toggleTheme}></i>
 }
