@@ -38,19 +38,22 @@ const posts = await res.json();
 	}
 
 	ul {
+		margin-top: 40px;
 		li {
 			font-size: 1.25rem;
 			font-family: 'Roboto', monospace;
-			margin-bottom: 1.5rem;
+			&:not(:last-child) {
+				margin: 1rem 0;
+				border-bottom: solid var(--text-color) 1px;
+			}
 			section {
-				margin-top: 1rem;
+				margin: 1rem 0;
 
 				.date {
-					margin-bottom: .25rem;
 					display: inline-block;
 				}
 				h2 {
-					color: #185F6D;
+					color: var(--alt-color);
 					font-size: inherit;
 					font-weight: inherit;
 				}
