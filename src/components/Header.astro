@@ -1,10 +1,13 @@
 ---
 import ToggleDarkMode from '../components/ToggleDarkMode';
+import Label from './Label';
 ---
 
 <nav>
-    <a href="/" class="text-gradient">Alan's Lab</a>
-
+    <a href="/">
+        <span class="text-gradient">Alan's Lab</span>
+        <Label name="Beta"/>
+    </a>
     <ul>
         <li><a href="https://github.com/alanakra"><i class="ri-github-fill"></i></a></li>
         <li><a href="https://codepen.io/alanakra"><i class="ri-codepen-line"></i></a></li>
@@ -22,6 +25,9 @@ import ToggleDarkMode from '../components/ToggleDarkMode';
             font-size: 3rem;
             font-weight: 800;
             margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         a {
