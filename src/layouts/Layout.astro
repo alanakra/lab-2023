@@ -41,13 +41,26 @@ const { title } = Astro.props;
 		list-style: none;
 	}
 
+	html {
+		&.dark {
+			--background-color: #121212;
+			--text-color: #ffffff;
+		}
+
+		&.light {
+			--background-color: #F6F6F6;
+			--text-color: #000000;
+		}
+	}
+
 	body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
 		padding: 40px;
-		background-color: #F6F6F6;
+		background-color: var(--background-color);
+		color: var(--text-color);
 	}
 
 	@media screen and (max-width: 450px) {

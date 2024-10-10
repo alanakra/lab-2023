@@ -3,11 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import dayjs from 'dayjs';
 const res = await fetch("https://wordpress.alanakra.fr/wp-json/wp/v2/posts");
 const posts = await res.json();
-import ToggleDarkMode from '../components/ToggleDarkMode';
 ---
 
 <Layout title="Alan's Lab">
-	<ToggleDarkMode client:load/>
 	<p class="intro">This website lists my creative coding projects. <br>
 		If these projects seem like crap to you, it's normal. I'm barely learning on my own time :) 
 	</p>
@@ -31,7 +29,7 @@ import ToggleDarkMode from '../components/ToggleDarkMode';
 
 <style lang="scss" scoped>
 	a {
-		color: black;
+		color: var(--text-color);
 		text-decoration: none;
 	}
 

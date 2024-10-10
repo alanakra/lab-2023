@@ -22,9 +22,11 @@ export default function ToggleDarkMode() {
         document.getElementsByTagName('html')[0] .classList.add(newTheme)
     }
 
-    return ( 
-        <button onClick={toggleTheme}>
-            Switch
-        </button>
+    return (
+        <>
+            <button onClick={toggleTheme}>
+                Switch
+            </button>
+        </>
     )
 }

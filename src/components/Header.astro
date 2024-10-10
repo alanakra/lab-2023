@@ -1,5 +1,5 @@
 ---
-
+import ToggleDarkMode from '../components/ToggleDarkMode';
 ---
 
 <nav>
@@ -8,6 +8,7 @@
     <ul>
         <li><a href="https://github.com/alanakra"><i class="ri-github-fill"></i></a></li>
         <li><a href="https://codepen.io/alanakra"><i class="ri-codepen-line"></i></a></li>
+        <li><ToggleDarkMode client:load/></li>
     </ul>
 </nav>
 
@@ -28,19 +29,27 @@
         }
 
         ul {
-            color: black;
+            color: var(--text-color);
             font-size: 2rem;
             display: flex;
             gap: 24px;
 
             li {
                 a {
-                    color: inherit;
+                    color: var(--text-color);
                     i {
-                        font-size: inherit;
+                        font-size: 2.5rem;
+                    }
+                    span {
+                        font-family: "Roboto",monospace;
                     }
                 }
             }
+        }
+    }
+    @media screen and (max-width: 550px) {
+        nav {
+            flex-direction: column !important;
         }
     }
 </style>
