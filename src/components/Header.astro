@@ -1,17 +1,25 @@
 ---
-import ToggleDarkMode from '../components/ToggleDarkMode';
-import Label from './Label';
+import ToggleDarkMode from "../components/ToggleDarkMode";
+import Label from "./Label";
 ---
 
 <nav>
     <a href="/">
         <span class="text-gradient">Alan's Lab</span>
-        <Label name="Beta"/>
+        <Label name="Beta" />
     </a>
     <ul>
-        <li><a href="https://github.com/alanakra" aria-label="GitHub"><i class="ri-github-fill"></i></a></li>
-        <li><a href="https://codepen.io/alanakra" aria-label="Codepen"><i class="ri-codepen-line"></i></a></li>
-        <li><ToggleDarkMode client:load/></li>
+        <li>
+            <a href="https://github.com/alanakra" aria-label="GitHub"
+                ><i class="ri-github-fill"></i></a
+            >
+        </li>
+        <li>
+            <a href="https://codepen.io/alanakra" aria-label="Codepen"
+                ><i class="ri-codepen-line"></i></a
+            >
+        </li>
+        <li><ToggleDarkMode client:load /></li>
     </ul>
 </nav>
 
@@ -22,7 +30,7 @@ import Label from './Label';
         align-items: center;
         margin-bottom: 20px;
         & > a {
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
             font-size: 3rem;
             font-weight: 800;
             margin: 0;
@@ -48,7 +56,7 @@ import Label from './Label';
                         font-size: 2.5rem;
                     }
                     span {
-                        font-family: "Roboto",monospace;
+                        font-family: "Roboto", monospace;
                     }
                 }
             }
